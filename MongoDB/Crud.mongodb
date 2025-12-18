@@ -1,0 +1,58 @@
+//Write a MongoDB query to find all documents in a collection where the field age is greater than 20.
+db.collection.find({age : {$gt : 20}})
+
+//Write a query to find all users whose status is "active" and role is "admin".
+db.collection.find({status : "active", role : "admin"})
+
+//Write a query to fetch documents where the salary is between 30,000 and 50,000.
+db.collection.find({salary : {$gt : 30000, $lt : 50000}})
+
+// Write a query to find products where the category is either "mobile" or "laptop".
+db.collection.find({category : {$in : ["mobile", "laptop"]}})
+
+// Write a MongoDB query to select only name and email fields while hiding the _id field.
+db.collection.find({}, {name : 1, email : 1, _id : 0})
+
+// Write a query to sort all employees by their age in descending order.
+db.collection.find().sort({age : -1})
+
+// Write a MongoDB query to find the top 5 highest-paid employees.
+db.collection.find().sort({salary : -1}).limit(5)
+
+// Write a query to find all documents where the tags array contains "javascript".
+
+
+// Write a query to find users whose age field does not exist.
+db.collection.find({age : {$exists : false}})
+
+// Write a query to count the total number of users in the collection.
+db.collection.find().count()
+
+// Write a query to update the salary of an employee whose empId is 101.
+db.collection.updateOne({empId : 101}, {$set : {salary : 50000}})
+
+// Write a query to increase the stock quantity of a product by 10.
+db.collection.updateOne({prodId : 101}, {$inc : {stock : 10}})
+
+// Write a query to delete a user whose email is "xyz@gmail.com".
+db.collection.deleteOne({email : "xyz@gmail.com"})
+
+// Write a MongoDB query to remove all documents where status = "inactive".
+db.collection.deleteMany({status : "inactive"})
+
+// Write a query to find all orders placed in the year 2024.
+db.collection.find({orderedYear : 2024})
+
+// Write a query to find documents where the ratings array has at least one value greater than 4.
+
+
+// Write a query to find students whose marks.math is greater than 90.
+
+
+// Write a query to group students by department and count how many are in each.
+
+
+// Write a query to find the average salary for each department using aggregation.
+
+
+// Write a MongoDB query to lookup (join) the orders collection with the customers collection based on customerId.
