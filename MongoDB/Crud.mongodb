@@ -56,3 +56,25 @@ db.collection.find({orderedYear : 2024})
 
 
 // Write a MongoDB query to lookup (join) the orders collection with the customers collection based on customerId.
+
+
+//Schema Designing and validation
+
+//when ever I created collection with schema validation 
+
+db.createCollection("faculty",{
+    validator:{
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["name", "age", "major", "Salary", "Role", "customId"],
+            properties:{
+                name: { bsonType: "string"},
+                age: { bsonType: "int", minimum: 18},
+                major: { bsonType: "string"},
+                Salary: {bsonType: "int", minimum: 0},
+                Role: {bsonType: "string"},
+                custonId: {bsonType: "string"}
+            }
+        }
+    }
+})
